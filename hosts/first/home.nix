@@ -75,10 +75,6 @@
   programs.home-manager.enable = true;
   programs.fzf.enable = true;
   programs.tmux.enable = true;
-  programs.starship = {
-  	enable = true;
-	enableZshIntegration = true;
-  };
   programs.bat.enable = true;
    	
 }
