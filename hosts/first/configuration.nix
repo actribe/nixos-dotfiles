@@ -150,7 +150,7 @@
     python3
     docker
     stow
-    teams
+    teams-for-linux
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
