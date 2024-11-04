@@ -21,5 +21,8 @@
 	programs.tmux.enable = true;
 	programs.fzf.enable = true;
 	programs.bat.enable = true;
-
+	programs.starship = {
+		enable = true;
+		enableZshIntegration = true;
+	};
 }
