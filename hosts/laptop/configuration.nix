@@ -152,6 +152,8 @@
     stow
     terraform
     kdePackages.kio-gdrive
+    kdePackages.kaccounts-providers
+    kdePackages.kaccounts-integration
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
