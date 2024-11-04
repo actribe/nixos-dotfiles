@@ -150,6 +150,7 @@
     python3
     docker
     stow
+    terraform
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
