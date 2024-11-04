@@ -10,7 +10,7 @@
 	];
 
 	home.file = {
-		zsh = "~/dotfiles/.zshrc";
+		".zshrc".source = ~/dotfiles/.zshrc;
 	};
 
 	home.sessionVariables = {
