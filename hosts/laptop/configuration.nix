@@ -151,6 +151,7 @@
     docker
     stow
     terraform
+    kdePackages.kio-drive
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
