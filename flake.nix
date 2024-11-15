@@ -1,5 +1,6 @@
 {
   description = "Nixos config flake";
+  inputs.nixos-hardware.url = "github:Nixos/nixos-hardware/master";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -17,7 +18,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }@inputs:
+    { self, nixpkgs, nixos-hardware, ... }@inputs:
     {
       nixosConfigurations = {
         first = nixpkgs.lib.nixosSystem {
@@ -45,6 +46,7 @@
           modules = [
             ./hosts/fw13/configuration.nix
             inputs.home-manager.nixosModules.default
+	    nixos-hardware.nixosModules.framework-13-7040-amd
           ];
         };
       };
