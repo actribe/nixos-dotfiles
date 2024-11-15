@@ -38,6 +38,15 @@
             inputs.home-manager.nixosModules.default
           ];
         };
+        fw13 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/fw13/configuration.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
       };
     };
 }
