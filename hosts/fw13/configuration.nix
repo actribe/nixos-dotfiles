@@ -132,8 +132,8 @@
 	};
   };
 
-  programs.hyprland.enable = true;
-  programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  programs.hyprland.enable = false;
+  #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
