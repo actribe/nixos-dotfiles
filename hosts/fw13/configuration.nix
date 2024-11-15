@@ -75,7 +75,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  
   #Enable Bluetooth
   hardware.bluetooth.enable = true;
 
@@ -155,9 +155,6 @@
     docker
     stow
     terraform
-    kdePackages.kio-gdrive
-    kdePackages.kaccounts-providers
-    kdePackages.kaccounts-integration
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
