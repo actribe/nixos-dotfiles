@@ -21,6 +21,11 @@
 	# programs.waybar.enable = true;
 	# programs.rofi.enable = true;
 
+	programs.kitty = {
+		enable = true;
+		shellIntegration.enableZshIntegration = true;
+	};
+
 	programs.tmux.enable = true;
 	programs.fzf = {
 		enable = true;

@@ -146,7 +146,6 @@
     neofetch
     brave
     git
-    kitty
     nixfmt-rfc-style
     nixd
     libreoffice-qt6-still
