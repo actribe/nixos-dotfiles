@@ -23,6 +23,7 @@
 
 	programs.kitty = {
 		enable = true;
+		enableZshIntegration = true;
 	};
 
 	programs.tmux.enable = true;

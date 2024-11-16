@@ -154,6 +154,7 @@
     docker
     stow
     terraform
+    kitty
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
