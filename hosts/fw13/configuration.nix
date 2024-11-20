@@ -153,6 +153,7 @@
     stow
     terraform
     kitty
+    zig
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
