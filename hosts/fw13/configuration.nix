@@ -16,9 +16,9 @@
     inputs.home-manager.nixosModules.default
   ];
   swapDevices = [ { device = "/swapfile"; size = 64*1024; } ];
-  # boot.kernelParams = [ "resume_offset=7266373" ];
-  # boot.resumeDevice = "/dev/dm-0";
-  boot.initrd.systemd.enable = true;
+  boot.kernelParams = [ "resume_offset=7266373" ];
+  boot.resumeDevice = "/dev/dm-0";
+  # boot.initrd.systemd.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
