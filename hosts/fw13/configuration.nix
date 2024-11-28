@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
+  swapDevices = [ { device = "/swapfile"; size = 64*1024; } ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
