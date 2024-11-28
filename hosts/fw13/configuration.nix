@@ -18,7 +18,7 @@
   swapDevices = [ { device = "/swapfile"; size = 64*1024; } ];
   boot.kernelParams = [ "resume_offset=7266373" ];
   boot.resumeDevice = "/dev/disk/by-uuid/4992d1a4-b11e-4f4f-9063-81678b14f346";
-  # boot.initrd.systemd.enable = true;
+  boot.initrd.systemd.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
