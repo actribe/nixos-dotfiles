@@ -5,6 +5,12 @@
 
 	home.stateVersion = "24.05";
 
+  dconf.settings = {
+    "org/gnome/mutter" = {
+      experimental-features = [ "scale-monitor-framebuffer" ];
+    };
+  };
+
 	home.packages = [
 
 	];
