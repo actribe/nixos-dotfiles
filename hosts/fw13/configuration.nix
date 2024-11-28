@@ -16,6 +16,8 @@
     inputs.home-manager.nixosModules.default
   ];
   swapDevices = [ { device = "/swapfile"; size = 64*1024; } ];
+  boot.kernelParams = [ "resume_offset=7266372" ]
+  boot.resumeDevice = "/dev/disk/by-uuid/0dc14346-f9ec-4b2f-a083-4c61f499636c";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
