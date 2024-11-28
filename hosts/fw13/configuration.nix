@@ -17,7 +17,7 @@
   ];
   swapDevices = [ { device = "/swapfile"; size = 64*1024; } ];
   boot.kernelParams = [ "resume_offset=7266373" ];
-  boot.resumeDevice = "/dev/dm-0";
+  boot.resumeDevice = "/dev/mapper/luks-029aa96d-e0ef-45b9-ad97-3900da0f8dea";
   # boot.initrd.systemd.enable = true;
 
   # Bootloader.
