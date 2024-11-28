@@ -16,10 +16,16 @@
     inputs.home-manager.nixosModules.default
   ];
 
+  #Include hibernation capabilities using swapfile.
   swapDevices = [ { device = "/swap/swapfile"; size = 64*1024; } ];
-  boot.kernelParams = [ "resume_offset=24323328" ];
+  boot.kernelParams = [ "resume_offset=7266372" ];
   boot.resumeDevice = "/dev/disk/by-uuid/4992d1a4-b11e-4f4f-9063-81678b14f346";
-  boot.initrd.systemd.enable = true;
+
+  #Set suspend-then-hibernate settings
+  systemd.sleep.extraConfig = ''
+      HibernateDelaySec=30min
+    '';
+  services.logind.lidSwitch = "suspend-then-hibernate";
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
