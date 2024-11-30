@@ -15,9 +15,25 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
+  
+
+  #In order to get the hibernation to work. Must do the following:
+  # 1. sudo btrfs subvolume create /swap
+  # 2. sudo chattr +C /swap
+  # 3. sudo fallocate --length <Ram Size>GiB /swap/swapfile
+  # 4. sudo mkswap /swap/swapfile
+  # 5. sudo swapon /swap/swapfile
+  # 6. Find the kernelParams Offset:
+  #   cmd -> sudo btrfs inspect-internal map-swapfile -r /swap/swapfile
+  # 7. Find the resumeDevice
+  #   cmd -> ll /dev/mapper/luks*
+  #
+  #References:
+  # https://sawyershepherd.org/post/hibernating-to-an-encrypted-swapfile-on-btrfs-with-nixos/
+  # https://discourse.nixos.org/t/is-it-possible-to-hibernate-with-swap-file/2852/3
 
   #Include hibernation capabilities using swapfile.
-  swapDevices = [ { device = "/swap/swapfile"; size = 64*1024; } ];
+  swapDevices = [ { device = "/swap/swapfile"; } ];
   boot.kernelParams = [ "resume_offset=7266372" ];
   boot.resumeDevice = "/dev/disk/by-uuid/4992d1a4-b11e-4f4f-9063-81678b14f346";
 

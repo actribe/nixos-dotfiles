@@ -31,6 +31,7 @@
 	programs.kitty = {
 		enable = true;
 		shellIntegration.enableZshIntegration = true;
+    extraConfig = "background_opacity 0.9";
 	};
 
 	programs.tmux.enable = true;
