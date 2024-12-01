@@ -15,7 +15,6 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
-  
 
   #In order to get the hibernation to work. Must do the following:
   # 1. sudo btrfs subvolume create /swap
@@ -39,8 +38,8 @@
 
   #Set suspend-then-hibernate settings
   systemd.sleep.extraConfig = ''
-      HibernateDelaySec=30min
-    '';
+    HibernateDelaySec=30min
+  '';
   services.logind.lidSwitch = "suspend-then-hibernate";
 
   # Bootloader.
@@ -83,16 +82,15 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver = {
-  	enable = true;
+    enable = true;
 
-  	displayManager.gdm.enable = true;
-  	desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
   # Enable the KDE Plasma Desktop Environment.
   # services.displayManager.sddm.enable = true;
   # services.desktopManager.plasma6.enable = true;
-
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -102,7 +100,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  
+
   #Enable Bluetooth
   hardware.bluetooth.enable = true;
 
@@ -133,8 +131,10 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-    ];
+    packages =
+      with pkgs;
+      [
+      ];
   };
 
   # Install firefox.
@@ -142,20 +142,22 @@
 
   #ZSH Set Up  
   users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh];
-  programs.zsh = {
-	enable = true;
-	autosuggestions.enable = true;
-	syntaxHighlighting.enable = true;
-	ohMyZsh = {
-		enable = true;
-		theme = "robbyrussell";
-		plugins = [
-			"git"
-			"history"
-		];
-	};
-  };
+  environment.shells = with pkgs; [ zsh ];
+   programs.zsh.enable = true;
+  # programs.zsh = {
+  # enable = true;
+  # autosuggestions.enable = true;
+  # syntaxHighlighting.enable = true;
+  # 
+  # ohMyZsh = {
+  # enable = true;
+  # theme = "robbyrussell";
+  # plugins = [
+  # "git"
+  # "history"
+  # ];
+  # };
+  # };
 
   programs.hyprland.enable = false;
   #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
