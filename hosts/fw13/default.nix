@@ -18,6 +18,11 @@
 	home.file = {
 	};
 
+	home.file.".config/nvim/init.lua" = {
+		source = ../../config/init.lua;
+		recursive = false;
+	};
+
 	home.sessionVariables = {
 		EDITOR = "nvim";
 		TERMINAL = "kitty";
@@ -34,14 +39,25 @@
     extraConfig = "background_opacity 0.9";
 	};
 
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+    viAlias = true;
+    defaultEditor = true;
+  };
+
+
 	programs.tmux.enable = true;
 	programs.fzf = {
 		enable = true;
 		enableZshIntegration = true;
 	};
 	programs.bat.enable = true;
+
 	programs.starship = {
 		enable = true;
 		enableZshIntegration = true;
 	};
+  home.file.".config/starship.toml".source = ../../config/starship.toml;
+
 }
