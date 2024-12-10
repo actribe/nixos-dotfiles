@@ -69,6 +69,8 @@ configs.setup({
 
 vim.cmd[[colorscheme nightfly]]
 
+--Vim settings
 vim.opt.scrolloff = 999
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.wrap = false

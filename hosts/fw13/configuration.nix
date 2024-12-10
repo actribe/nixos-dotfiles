@@ -173,6 +173,15 @@
   nixpkgs.config.allowUnfree = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+
+  #Setup Flatpak
+  #  services.flatpak = {
+  #  enable = true;
+  #  packages = [
+  #    { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
+  #  ];
+  #};
+
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
@@ -190,6 +199,7 @@
     terraform
     kitty
     zig
+    obsidian
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
