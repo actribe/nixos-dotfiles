@@ -15,10 +15,14 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs =
-    { self, nixpkgs, nixos-hardware, ... }@inputs:
+    { self, nixpkgs, nixos-hardware, ghostty, ... }@inputs:
     {
       nixosConfigurations = {
         first = nixpkgs.lib.nixosSystem {
@@ -46,7 +50,12 @@
           modules = [
             ./hosts/fw13/configuration.nix
             inputs.home-manager.nixosModules.default
-	    nixos-hardware.nixosModules.framework-13-7040-amd
+	          nixos-hardware.nixosModules.framework-13-7040-amd
+            {
+              environment.systemPackages = [
+                ghostty.packages.x86_64-linux.default
+              ];
+            }
           ];
         };
       };
