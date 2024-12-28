@@ -55,10 +55,9 @@
     };
   };
 
-  programs.kitty = {
-    enable = true;
-    shellIntegration.enableZshIntegration = true;
-    extraConfig = "background_opacity 0.9";
+  home.file.".config/ghostty" = {
+    source = ../../config/ghostty;
+    recursive = true;
   };
 
   programs.fastfetch.enable = true;

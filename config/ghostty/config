@@ -1,0 +1,47 @@
+########################
+#    Ghostty Config    #
+########################
+
+########################
+#    Window  Config    #
+########################
+
+window-theme = ghostty
+fullscreen = true
+window-decoration = false
+background-opacity = 0.8
+theme = "/home/armyc/.local/share/nvim/lazy/tokyonight.nvim/extras/ghostty/tokyonight_night"
+
+########################
+#     Shell Config     #
+########################
+
+shell-integration = zsh
+
+########################
+#    Cursor  Config    #
+########################
+
+cursor-style = block
+cursor-color = #a3aed2
+
+
+########################
+#   Clipboard Config   #
+########################
+
+clipboard-read = allow
+clipboard-write = allow
+clipboard-paste-protection = true
+copy-on-select = false
+
+########################
+#       Keybinds       #
+########################
+
+keybind = super+alt+j=toggle_quick_terminal
+keybind = ctrl+,=open_config
+keybind = ctrl+shift+,=reload_config
+keybind = ctrl+q=close_window
+keybind = ctrl+alt+q=close_all_windows
+
