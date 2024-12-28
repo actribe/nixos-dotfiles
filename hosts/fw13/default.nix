@@ -61,6 +61,8 @@
     extraConfig = "background_opacity 0.9";
   };
 
+  programs.fastfetch.enable = true;
+
   programs.neovim = {
     enable = true;
     vimAlias = true;
@@ -78,6 +80,7 @@
     enable = true;
     enableZshIntegration = true;
   };
+
   programs.bat.enable = true;
 
   programs.starship = {
