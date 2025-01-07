@@ -7,10 +7,13 @@
 ########################
 
 window-theme = ghostty
-fullscreen = true
+fullscreen = false
 window-decoration = false
 background-opacity = 0.8
 theme = "/home/armyc/.local/share/nvim/lazy/tokyonight.nvim/extras/ghostty/tokyonight_night"
+
+window-height = 1500
+window-width = 1500
 
 ########################
 #     Shell Config     #

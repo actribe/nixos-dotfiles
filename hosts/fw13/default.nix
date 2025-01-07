@@ -21,7 +21,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    TERMINAL = "kitty";
+    # TERMINAL = "kitty";
     SHELL = "zsh";
   };
 
@@ -29,6 +29,10 @@
 
   # programs.waybar.enable = true;
   # programs.rofi.enable = true;
+  
+  # programs.kitty = {
+  #  enable = true;
+  # };
 
   programs.zsh = {
     enable = true;

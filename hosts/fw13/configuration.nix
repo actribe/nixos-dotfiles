@@ -197,6 +197,8 @@
     terraform
     zig
     obsidian
+
+    # kitty
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
