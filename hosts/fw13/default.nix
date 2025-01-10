@@ -74,7 +74,7 @@
   };
 
   home.file.".config/nvim/init.lua" = {
-    source = ../../config/init.lua;
+    source = ../../config/nvim/init.lua;
     recursive = false;
   };
 
