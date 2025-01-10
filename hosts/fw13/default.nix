@@ -71,18 +71,6 @@
 
   programs.fastfetch.enable = true;
 
-  #programs.neovim = {
-  # enable = true;
-  # vimAlias = true;
-  # viAlias = true;
-  # defaultEditor = true;
-  #};
-  #
-  #home.file.".config/nvim/init.lua" = {
-  #  source = ../../config/nvim/init.lua;
-  # recursive = false;
-  #};
-
   programs.tmux.enable = true;
   programs.fzf = {
     enable = true;
@@ -90,11 +78,5 @@
   };
 
   programs.bat.enable = true;
-
-  #programs.starship = {
-  #enable = true;
-    #enableZshIntegration = true;
-    #};
-  #home.file.".config/starship.toml".source = ../../config/starship.toml;
 
 }
