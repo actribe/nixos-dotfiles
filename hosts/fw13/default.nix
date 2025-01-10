@@ -36,6 +36,7 @@
 
   imports = [
     ../../home/features/tuis/starship.nix
+    ../../home/features/tuis/nvim.nix
   ];
 
   programs.zsh = {
@@ -70,17 +71,17 @@
 
   programs.fastfetch.enable = true;
 
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-    viAlias = true;
-    defaultEditor = true;
-  };
-
-  home.file.".config/nvim/init.lua" = {
-    source = ../../config/nvim/init.lua;
-    recursive = false;
-  };
+  #programs.neovim = {
+  # enable = true;
+  # vimAlias = true;
+  # viAlias = true;
+  # defaultEditor = true;
+  #};
+  #
+  #home.file.".config/nvim/init.lua" = {
+  #  source = ../../config/nvim/init.lua;
+  # recursive = false;
+  #};
 
   programs.tmux.enable = true;
   programs.fzf = {
