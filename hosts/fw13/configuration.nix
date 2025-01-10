@@ -194,7 +194,6 @@
     python3
     docker
     stow
-    terraform
     zig
     obsidian
 

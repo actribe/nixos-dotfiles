@@ -11,8 +11,8 @@
     };
   };
 
-  home.packages = [
-
+  home.packages = with pkgs; [
+    terraform
   ];
 
   home.file =
