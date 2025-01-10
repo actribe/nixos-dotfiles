@@ -28,30 +28,14 @@
 
   programs.home-manager.enable = true;
 
-  # programs.waybar.enable = true;
-  # programs.rofi.enable = true;
-  
-  # programs.kitty = {
-  #  enable = true;
-  # };
-
   imports = [
     ../../home/features/tuis/starship.nix
     ../../home/features/tuis/nvim.nix
     ../../home/features/tuis/zsh.nix
     ../../home/features/tuis/fzf.nix
-
+    ../../home/features/tuis/default.nix
+    ../../home/features/applications/ghostty.nix
   ];
 
-  home.file.".config/ghostty" = {
-    source = ../../config/ghostty;
-    recursive = true;
-  };
-
-  programs.fastfetch.enable = true;
-
-  programs.tmux.enable = true;
-
-  programs.bat.enable = true;
 
 }
