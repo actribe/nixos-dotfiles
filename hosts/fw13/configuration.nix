@@ -150,21 +150,7 @@
   #ZSH Set Up  
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [ zsh ];
-   programs.zsh.enable = true;
-  # programs.zsh = {
-  # enable = true;
-  # autosuggestions.enable = true;
-  # syntaxHighlighting.enable = true;
-  # 
-  # ohMyZsh = {
-  # enable = true;
-  # theme = "robbyrussell";
-  # plugins = [
-  # "git"
-  # "history"
-  # ];
-  # };
-  # };
+  programs.zsh.enable = true;
 
   programs.hyprland.enable = false;
   #programs.hyprland.package = inputs.hyprland.packages."${pkgs.system}".hyprland;
