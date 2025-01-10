@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   home.username = "armyc";
   home.homeDirectory = "/home/armyc";
@@ -33,6 +33,10 @@
   # programs.kitty = {
   #  enable = true;
   # };
+
+  imports = [
+    ../../home/features/tuis/starship.nix
+  ];
 
   programs.zsh = {
     enable = true;
@@ -86,10 +90,10 @@
 
   programs.bat.enable = true;
 
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-  home.file.".config/starship.toml".source = ../../config/starship.toml;
+  #programs.starship = {
+  #enable = true;
+    #enableZshIntegration = true;
+    #};
+  #home.file.".config/starship.toml".source = ../../config/starship.toml;
 
 }
