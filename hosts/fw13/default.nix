@@ -28,14 +28,9 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../home/features/tuis/starship.nix
-    ../../home/features/tuis/nvim.nix
-    ../../home/features/tuis/zsh.nix
-    ../../home/features/tuis/fzf.nix
-    ../../home/features/tuis/default.nix
-    ../../home/features/tuis/basic.nix
     ../../home/features/applications/ghostty.nix
     ../../home/flavors/personal_development.nix
+    ../../home/flavors/tuis.nix
   ];
 
 
