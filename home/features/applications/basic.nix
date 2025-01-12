@@ -2,6 +2,6 @@
 {
   home.packages = with pkgs; [
     brave
-    libre-office-qt6-still
+    libreoffice-qt6-still
   ];
 }
