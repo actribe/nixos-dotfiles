@@ -35,7 +35,6 @@
     ../../home/features/tuis/default.nix
     ../../home/features/tuis/basic.nix
     ../../home/features/applications/ghostty.nix
-    ../../home/features/applications/basic.nix
     ../../home/features/development/devops.nix
     ../../home/features/development/zig.nix
     ../../home/features/development/python.nix

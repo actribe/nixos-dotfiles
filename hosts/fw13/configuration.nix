@@ -14,6 +14,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
+    ../../nixos/pkgs/applications/basic.nix
   ];
 
   #In order to get the hibernation to work. Must do the following:
@@ -167,6 +168,7 @@
   #    { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
   #  ];
   #};
+  
 
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
