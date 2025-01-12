@@ -58,6 +58,21 @@
             }
           ];
         };
+        work = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/work/configuration.nix
+            inputs.home-manager.nixosModules.default
+	          nixos-hardware.nixosModules.framework-13-7040-amd
+            {
+              environment.systemPackages = [
+                ghostty.packages.x86_64-linux.default
+              ];
+            }
+          ];
+        };
       };
     };
 }

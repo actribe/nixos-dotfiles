@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 {
-  home.username = "armyc";
-  home.homeDirectory = "/home/armyc";
+  home.username = "actribe";
+  home.homeDirectory = "/home/actribe";
 
   home.stateVersion = "24.05";
 
@@ -35,7 +35,9 @@
     ../../home/features/tuis/default.nix
     ../../home/features/tuis/basic.nix
     ../../home/features/applications/ghostty.nix
-    ../../home/flavors/personal_development.nix
+    ../../home/features/development/devops.nix
+    ../../home/features/development/zig.nix
+    ../../home/features/development/python.nix
   ];
 
 

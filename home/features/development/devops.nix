@@ -5,5 +5,6 @@
     docker
     git
     lazygit
+    awscli2
   ];
 }

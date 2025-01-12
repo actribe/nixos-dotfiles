@@ -48,7 +48,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "Army-FW13"; # Define your hostname.
+  networking.hostName = "actribe-FW13"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = [
@@ -133,9 +133,9 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.armyc = {
+  users.users.actribe = {
     isNormalUser = true;
-    description = "army castillo";
+    description = "Armando Castillo At Tribe";
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -177,7 +177,7 @@
       inherit inputs;
     };
     users = {
-      "armyc" = import ./default.nix;
+      "actribe" = import ./default.nix;
     };
   };
 
