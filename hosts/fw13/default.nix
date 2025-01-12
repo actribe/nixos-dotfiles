@@ -13,7 +13,6 @@
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
-    terraform
   ];
 
   home.file =
@@ -34,7 +33,12 @@
     ../../home/features/tuis/zsh.nix
     ../../home/features/tuis/fzf.nix
     ../../home/features/tuis/default.nix
+    ../../home/features/tuis/basic.nix
     ../../home/features/applications/ghostty.nix
+    ../../home/features/applications/basic.nix
+    ../../home/features/development/devops.nix
+    ../../home/features/development/zig.nix
+    ../../home/features/development/python.nix
   ];
 
 
