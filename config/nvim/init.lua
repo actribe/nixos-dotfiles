@@ -23,12 +23,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     {
-      "folke/tokyonight.nvim",
-      lazy = false,
-      priority = 1000,
-      opts = {},
-    },
-    {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
@@ -66,6 +60,9 @@ configs.setup({
   highlight = { enable = true },
   indent = { enable = true },  
 })
+
+--Setup LSP
+require'lspconfig'.zls.setup{}
 
 vim.cmd[[colorscheme nightfly]]
 
