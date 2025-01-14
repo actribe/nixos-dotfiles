@@ -1,4 +1,4 @@
-{ fetchFromGitHub, ... }:
+{ fetchFromGitHub, lib, ... }:
 {
   source = fetchFromGitHub {
     owner = "folke";
