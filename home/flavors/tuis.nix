@@ -8,5 +8,6 @@
     ../features/tuis/tokyonight.nix
     ../features/tuis/starship.nix
     ../features/tuis/zsh.nix
+    ../features/tuis/lazydocker.nix
   ];
 }
