@@ -28,24 +28,6 @@
     { self, nixpkgs, nixos-hardware, ghostty, nvf, ... }@inputs:
     {
       nixosConfigurations = {
-        first = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/first/configuration.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
-        laptop = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/laptop/configuration.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
         fw13 = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
@@ -70,6 +52,7 @@
             ./hosts/work/configuration.nix
             inputs.home-manager.nixosModules.default
 	          nixos-hardware.nixosModules.framework-13-7040-amd
+            nvf.nixosModules.default
             {
               environment.systemPackages = [
                 ghostty.packages.x86_64-linux.default
