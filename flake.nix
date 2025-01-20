@@ -19,10 +19,13 @@
     ghostty = {
       url = "github:ghostty-org/ghostty";
     };
+
+    nvf.url = "github:notashelf/nvf";
+
   };
 
   outputs =
-    { self, nixpkgs, nixos-hardware, ghostty, ... }@inputs:
+    { self, nixpkgs, nixos-hardware, ghostty, nvf, ... }@inputs:
     {
       nixosConfigurations = {
         first = nixpkgs.lib.nixosSystem {
@@ -51,6 +54,7 @@
             ./hosts/fw13/configuration.nix
             inputs.home-manager.nixosModules.default
 	          nixos-hardware.nixosModules.framework-13-7040-amd
+            nvf.nixosModules.default
             {
               environment.systemPackages = [
                 ghostty.packages.x86_64-linux.default

@@ -7,7 +7,9 @@
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
+      LazyVim
       zig-vim
+      toggleterm-nvim
     ];
 
   };

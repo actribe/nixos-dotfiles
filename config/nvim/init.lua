@@ -29,7 +29,9 @@ require("lazy").setup({
     {
       "neovim/nvim-lspconfig",
     },
-    { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 },
+    { "williamboman/mason-lspconfig.nvim", enabled = false },
+    { "williamboman/mason.nvim", enabled = false },
+    { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = true, priority = 1000 },
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {
       "nvim-neo-tree/neo-tree.nvim",
@@ -66,6 +68,8 @@ configs.setup({
 
 --Setup LSP
 require'lspconfig'.zls.setup{}
+require'lspconfig'.nixd.setup{}
+require'lspconfig'.lua_ls.setup{}
 
 vim.cmd[[colorscheme nightfly]]
 
