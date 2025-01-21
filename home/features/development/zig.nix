@@ -3,5 +3,6 @@
   home.packages = with pkgs; [
     zls
     zig
+    lldb
   ];
 }

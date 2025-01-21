@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 {
   programs.nvf = {
     enable = true;
@@ -15,6 +15,27 @@
       };
 
       vim = {
+        luaConfigPost =  ''
+        dap.adapters.lldb = {
+          type = 'executable',
+          command = '${pkgs.lldb}/bin/lldb-dap',
+          name = 'lldb'
+        }
+        dap.configurations.zig = {
+          {
+            name = 'Launch',
+            type = 'lldb',
+            request = 'launch',
+            program = function()
+              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            end,
+            cwd = "''${workspaceFolder}",
+            stopOnEntry = false,
+            args = {},
+          },
+        }
+      '';
+
         theme = {
           enable = false;
           name = "tokyonight";
@@ -24,6 +45,13 @@
         options = {
           tabstop = 2;
           shiftwidth = 2;
+          wrap = false;
+        };
+
+        dashboard = {
+          startify = {
+            enable = true;
+          };
         };
 
         statusline.lualine.enable = true;

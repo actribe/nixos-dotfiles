@@ -34,9 +34,9 @@
   # https://discourse.nixos.org/t/is-it-possible-to-hibernate-with-swap-file/2852/3
 
   #Include hibernation capabilities using swapfile.
-  swapDevices = [ { device = "/swap/swapfile"; } ];
-  boot.kernelParams = [ "resume_offset=7266372" ];
-  boot.resumeDevice = "/dev/disk/by-uuid/4992d1a4-b11e-4f4f-9063-81678b14f346";
+  #  swapDevices = [ { device = "/swap/swapfile"; } ];
+  #  boot.kernelParams = [ "resume_offset=7266372" ];
+  #  boot.resumeDevice = "/dev/disk/by-uuid/4992d1a4-b11e-4f4f-9063-81678b14f346";
 
   #Set suspend-then-hibernate settings
   systemd.sleep.extraConfig = ''

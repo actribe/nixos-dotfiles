@@ -6,6 +6,7 @@
     syntaxHighlighting.enable = true;
     initExtra = ''
       eval "$(starship init zsh)"
+      eval "$(direnv hook zsh)"
     '';
 
     shellAliases = {
