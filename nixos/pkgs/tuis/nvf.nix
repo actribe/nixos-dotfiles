@@ -15,27 +15,6 @@
       };
 
       vim = {
-        luaConfigPost =  ''
-        dap.adapters.lldb = {
-          type = 'executable',
-          command = '${pkgs.lldb}/bin/lldb-dap',
-          name = 'lldb'
-        }
-        dap.configurations.zig = {
-          {
-            name = 'Launch',
-            type = 'lldb',
-            request = 'launch',
-            program = function()
-              return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-            end,
-            cwd = "''${workspaceFolder}",
-            stopOnEntry = false,
-            args = {},
-          },
-        }
-      '';
-
         theme = {
           enable = false;
           name = "tokyonight";
@@ -95,6 +74,7 @@
           };
           lua.enable = true;
           zig.enable = true;
+          clang.enable = true;
           python = {
             enable = true;
             format = {

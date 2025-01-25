@@ -20,6 +20,7 @@
       url = "github:ghostty-org/ghostty";
     };
 
+    #nvf.url = "github:notashelf/nvf";
     nvf.url = "github:notashelf/nvf";
 
   };

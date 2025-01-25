@@ -4,4 +4,3 @@
     (pkgs.callPackage ../../../nixos/pkgs/tuis/lazydocker/lazydocker.nix { })
   ];
 }
-
