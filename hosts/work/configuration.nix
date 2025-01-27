@@ -16,6 +16,8 @@
     inputs.home-manager.nixosModules.default
     ../../nixos/pkgs/applications/basic.nix
     ../../nixos/pkgs/development/basic.nix
+    ../../nixos/pkgs/work/basic.nix
+    ../../nixos/pkgs/tuis/basic.nix
   ];
 
   #In order to get the hibernation to work. Must do the following:
