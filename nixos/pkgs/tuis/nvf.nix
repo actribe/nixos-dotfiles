@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, ... }:
 {
   programs.nvf = {
     enable = true;
@@ -25,6 +25,14 @@
           tabstop = 2;
           shiftwidth = 2;
           wrap = false;
+        };
+
+        utility = {
+          motion = {
+            precognition = {
+              enable = true;
+            };
+          };
         };
 
         dashboard = {

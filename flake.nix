@@ -1,5 +1,5 @@
 {
-  description = "Nixos config flake";
+  description = "ARCIII nixos config flake";
   inputs.nixos-hardware.url = "github:Nixos/nixos-hardware/master";
 
   inputs = {
@@ -20,7 +20,6 @@
       url = "github:ghostty-org/ghostty";
     };
 
-    #nvf.url = "github:notashelf/nvf";
     nvf.url = "github:notashelf/nvf";
 
   };
