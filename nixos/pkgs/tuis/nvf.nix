@@ -15,6 +15,10 @@
       };
 
       vim = {
+        luaConfigPost = ''
+          vim.opt.scrolloff = 999  
+          '';
+
         theme = {
           enable = false;
           name = "tokyonight";
@@ -30,7 +34,7 @@
         utility = {
           motion = {
             precognition = {
-              enable = true;
+              enable = false;
             };
           };
         };
