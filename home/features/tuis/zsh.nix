@@ -18,7 +18,6 @@
       zb = "zig build";
       zr = "zig run";
       zt = "zig test";
-
     };
 
     oh-my-zsh = {

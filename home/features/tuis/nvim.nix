@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
     vimAlias = true;
@@ -11,7 +10,6 @@
       zig-vim
       toggleterm-nvim
     ];
-
   };
 
   home.file.".config/nvim/init.lua" = {

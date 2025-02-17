@@ -1,5 +1,9 @@
-{ config, pkgs, lib, ... }:
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   home.username = "actribe";
   home.homeDirectory = "/home/actribe";
 
@@ -7,7 +11,7 @@
 
   dconf.settings = {
     "org/gnome/mutter" = {
-      experimental-features = [ "scale-monitor-framebuffer" ];
+      experimental-features = ["scale-monitor-framebuffer"];
     };
   };
 
@@ -15,9 +19,8 @@
   home.packages = with pkgs; [
   ];
 
-  home.file =
-    {
-    };
+  home.file = {
+  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
@@ -32,6 +35,4 @@
     ../../home/features/applications/ghostty.nix
     ../../home/flavors/work_development.nix
   ];
-
-
 }

@@ -1,15 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   config,
   pkgs,
   inputs,
   ...
-}:
-
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -141,19 +138,18 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
-    packages =
-      with pkgs;
-      [
-      ];
+    packages = with pkgs; [
+    ];
   };
 
   # Install firefox.
   programs.firefox.enable = false;
 
-  #ZSH Set Up  
+  #ZSH Set Up
   users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
   programs.zsh.enable = true;
 
   programs.hyprland.enable = false;
@@ -171,7 +167,7 @@
     obsidian
   ];
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   home-manager = {
     #also pass inputs to home-manager modules
@@ -209,5 +205,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

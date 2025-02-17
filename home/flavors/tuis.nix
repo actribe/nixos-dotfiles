@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ../features/tuis/basic.nix
     ../features/tuis/default.nix

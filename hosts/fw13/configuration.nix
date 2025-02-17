@@ -1,15 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
   config,
   pkgs,
   inputs,
   ...
-}:
-
-{
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -35,8 +32,8 @@
   # https://discourse.nixos.org/t/is-it-possible-to-hibernate-with-swap-file/2852/3
 
   #Include hibernation capabilities using swapfile.
-  swapDevices = [ { device = "/swap/swapfile"; } ];
-  boot.kernelParams = [ "resume_offset=7266372" ];
+  swapDevices = [{device = "/swap/swapfile";}];
+  boot.kernelParams = ["resume_offset=7266372"];
   boot.resumeDevice = "/dev/disk/by-uuid/4992d1a4-b11e-4f4f-9063-81678b14f346";
 
   #Set suspend-then-hibernate settings
@@ -44,6 +41,9 @@
     HibernateDelaySec=30min
   '';
   services.logind.lidSwitch = "suspend-then-hibernate";
+
+  #Power Management
+  services.upower.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -142,18 +142,16 @@
       "wheel"
       "docker"
     ];
-    packages =
-      with pkgs;
-      [
-      ];
+    packages = with pkgs; [
+    ];
   };
 
   # Install firefox.
   programs.firefox.enable = false;
 
-  #ZSH Set Up  
+  #ZSH Set Up
   users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
   programs.zsh.enable = true;
 
   programs.hyprland.enable = false;
@@ -171,7 +169,7 @@
     obsidian
   ];
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
 
   home-manager = {
     #also pass inputs to home-manager modules
@@ -209,5 +207,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
-
 }

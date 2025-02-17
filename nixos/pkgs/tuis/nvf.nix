@@ -1,23 +1,41 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: let
+  eldritch-nvim = pkgs.vimUtils.buildVimPlugin {
+    pname = "eldritch-nvim";
+    version = "2025-01-15";
+    src = pkgs.fetchFromGitHub {
+      owner = "eldritch-theme";
+      repo = "eldritch.nvim";
+      rev = "adedead3423c58cc2e2ebf30001fe4055ad0e416";
+      sha256 = "sha256-i0TG8yVRi1AZQS8ZOEXchYRxgU8UCNoHCmhOV8rBmX4=";
+    };
+  };
+in {
   programs.nvf = {
     enable = true;
 
     settings = {
-
-      vim.extraPlugins = with pkgs.vimPlugins; {
-        nightfly = {
-          package = nightfly;
-          setup = ''
-            vim.cmd[[colorscheme nightfly]]
-          '';
-        };
-      };
-
       vim = {
+        lazy.plugins = {
+          eldritch-nvim = {
+            package = eldritch-nvim;
+            setupModule = "eldritch";
+            setupOpts = {
+              transparent = true;
+            };
+            after = ''
+              vim.cmd[[colorscheme eldritch]]
+            '';
+            lazy = false;
+          };
+        };
+
+        treesitter.enable = true;
+
         luaConfigPost = ''
-          vim.opt.scrolloff = 999  
-          '';
+          vim.opt.scrolloff = 999
+        '';
+
+        # scrollOffset = 999;
 
         theme = {
           enable = false;
@@ -37,11 +55,38 @@
               enable = false;
             };
           };
+
+          images = {
+            image-nvim = {
+              enable = false;
+              setupOpts = {
+                backend = "kitty";
+              };
+            };
+          };
+
+          leetcode-nvim = {
+            enable = true;
+            setupOpts = {
+              image_support = false;
+              cn = {
+                enabled = false;
+                translator = false;
+              };
+              lang = "c";
+              plugins = {
+                non_standalone = false;
+              };
+            };
+          };
         };
 
         dashboard = {
-          startify = {
+          dashboard-nvim = {
             enable = true;
+            setupOpts = {
+              theme = "hyper";
+            };
           };
         };
 
@@ -57,6 +102,10 @@
               autoStart = true;
             };
           };
+        };
+
+        visuals = {
+          nvim-web-devicons.enable = true;
         };
 
         lsp = {
@@ -81,18 +130,17 @@
             enable = true;
             format = {
               enable = true;
-              type = "nixfmt";
+              type = "alejandra";
             };
+            lsp.enable = true;
+            treesitter.enable = true;
           };
           lua.enable = true;
           zig.enable = true;
           clang.enable = true;
-          python = {
-            enable = true;
-            format = {
-              enable = true;
-            };
-          };
+          html.enable = true;
+          python.enable = true;
+          markdown.enable = true;
         };
 
         assistant = {
@@ -125,12 +173,16 @@
             plugins = {
               lspsaga = {
                 enable = true;
-                style = "single";
+                style = "none";
+              };
+              nvim-cmp = {
+                enable = true;
+                style = "rounded";
               };
             };
           };
+          noice.enable = true;
         };
-
       };
     };
   };

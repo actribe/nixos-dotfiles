@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.file.".local/share/nvim/nix/tokyonight.nvim/".source = pkgs.fetchFromGitHub {
     owner = "folke";
     repo = "tokyonight.nvim";
